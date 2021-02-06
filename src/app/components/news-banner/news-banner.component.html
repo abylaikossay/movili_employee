@@ -1,3 +1,10 @@
-<div class="banner-card">
-    <img class="text-img" src="assets/banner-text.svg" alt="">
-</div>
+<ion-slides pager="true" [options]="slideOpts">
+	<ion-slide *ngFor="let banner of banners">
+		<div class="banner-img-text">
+			<img src="assets/banner{{banner}}.jpg" class="banner-card" alt="">
+			<span class="banner-text">
+            Бонусы и промокоды % промокоды
+        </span>
+		</div>
+	</ion-slide>
+</ion-slides>
