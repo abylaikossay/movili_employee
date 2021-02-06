@@ -1,0 +1,20 @@
+:host {
+  .selected-color {
+    fill: var(--custom-background-color-danger);
+    color: var(--custom-background-color-danger) !important;
+  }
+  ion-tab-bar {
+    border-radius: 15px 15px 0 0;
+    height: 20vw;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0px -0.5px 0px rgba(0, 0, 0, 0.3);
+  }
+  .text {
+    font-style: var(--custom-font-style-normal);
+    font-weight: var(--custom-font-weight-regular);
+    font-size: var(--custom-font-size-10);
+    line-height: var(--custom-line-height);
+    color: var(--custom-text-color-movili-dark);
+    text-align: center;
+  }
+}
