@@ -45,6 +45,6 @@ export class CommonHeaderComponent implements OnInit {
             this.navCtrl.navigateBack([this.route]);
             return;
         }
-        this.navCtrl.back({animated: false});
+        this.navCtrl.back({animated: true});
     }
 }

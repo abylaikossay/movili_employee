@@ -48,6 +48,15 @@ const routes: Routes = [
     redirectTo: '/main/login',
     pathMatch: 'full'
   },
+  {
+    path: 'appointment-info',
+    loadChildren: () => import('./pages/inner-tab/appointment-info/appointment-info.module').then( m => m.AppointmentInfoPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/outer/chat/chat.module').then(m => m.ChatPageModule)
+  },
+
 
 ];
 @NgModule({

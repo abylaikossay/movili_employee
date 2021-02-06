@@ -24,16 +24,25 @@ export class LoginService {
 
 
     async sendPassword(password: SessionRequestPassword) {
+        let isIsp = false;
         await this.authControllerService.sendPasswordLogin(password)
             .pipe(
                 tap(async (value) => {
-                    this.storageLocalService.setRole(value?.role?.name);
-                    await this.authService.setPhoneNumber(value?.phoneNumber);
-                    this.authService.setSession(value?.token);
+                    console.log(value);
+                    if (value.role.name === 'ROLE_ISP') {
+                        isIsp = true;
+                        this.storageLocalService.setRole(value?.role?.name);
+                        await this.authService.setPhoneNumber(value?.phoneNumber);
+                        this.authService.setSession(value?.token);
+                    } else {
+                        this.toastService.present('Не верная роль!');
+                    }
                 }),
             )
             .toPromise();
-        await this.authService.goByMainPage();
+        if (isIsp) {
+            await this.authService.goByMainPage();
+        }
     }
 
     async registerTemplateUser(userTemplateRequest: UserTemplateRequest) {
@@ -99,7 +108,7 @@ export class LoginService {
     }
 
     async logout() {
-        this.navCtrl.navigateRoot(['/login']);
+        this.navCtrl.navigateRoot(['/main/login']);
     }
 
 }

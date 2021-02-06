@@ -8,6 +8,8 @@ import { ProfileTabPageRoutingModule } from './profile-tab-routing.module';
 
 import { ProfileTabPage } from './profile-tab.page';
 import {CommonHeaderModule} from '../../../components/header/common-header/common-header.module';
+import { ArrowButtonModule } from '../../../components/arrow-button/arrow-button.module';
+import { DirectiveModule } from '../../../modules/directive.module';
 
 @NgModule({
     imports: [
@@ -16,6 +18,8 @@ import {CommonHeaderModule} from '../../../components/header/common-header/commo
         IonicModule,
         ProfileTabPageRoutingModule,
         CommonHeaderModule,
+        ArrowButtonModule,
+        DirectiveModule,
     ],
   declarations: [ProfileTabPage]
 })

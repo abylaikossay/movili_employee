@@ -9,5 +9,10 @@
             <h5>Активные заявки</h5>
             <img src="assets/icon/filter.svg" (click)="goToFilter()" alt="">
         </div>
+        <div class="active-applications">
+            <div class="card-margin-border" *ngFor="let applicaton of applications">
+                <app-applications-card (click)="goToApplication()" class="application-card"></app-applications-card>
+            </div>
+        </div>
     </div>
 </ion-content>

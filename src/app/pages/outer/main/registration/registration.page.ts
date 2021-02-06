@@ -29,7 +29,7 @@ export class RegistrationPage implements OnInit {
     lastName: '',
     phone: '',
     platform: 'IOS',
-    roleName: 'ROLE_USER',
+    roleName: 'ROLE_ISP',
   };
   userGender: string = '';
   userPhone: string = '';

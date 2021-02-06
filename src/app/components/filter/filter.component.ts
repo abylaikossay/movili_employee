@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ModalService } from '../../services/controllers/modal.service';
+import { MoviliHeader } from '../../models/commons/MoviliHeader';
 
 @Component({
     selector: 'app-filter',
@@ -12,8 +14,10 @@ export class FilterComponent implements OnInit {
         {id: 3, name: 'По цене', checked: false},
         {id: 4, name: 'Новые', checked: true}];
 
-    constructor() {
+    constructor(private modalService: ModalService) {
     }
+
+    moviliHeader: MoviliHeader = MoviliHeader.FILTER();
 
     ngOnInit() {
     }
@@ -23,5 +27,6 @@ export class FilterComponent implements OnInit {
     }
 
     applyFilter() {
+        this.modalService.dismiss(this.categories);
     }
 }
