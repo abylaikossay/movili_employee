@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {BannersResponse} from '../../models/responses/BannersResponse';
+import {environment} from '../../../environments/environment';
 
 @Component({
     selector: 'app-news-banner',
@@ -10,7 +12,10 @@ export class NewsBannerComponent implements OnInit {
         initialSlide: 0,
         speed: 400,
     };
-    banners: any = [1, 2, 3];
+    @Input() banners: BannersResponse[];
+    photoUrl: string = environment.imageUrl + '/banner/';
+
+    // banners: any = [1, 2, 3];
 
     constructor() {
     }

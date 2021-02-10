@@ -11,6 +11,11 @@ const routes: Routes = [
         loadChildren: () => import('./pages/outer/main/login/login.module').then( m => m.LoginPageModule)
       },
       {
+        path: '',
+        redirectTo: '/main/welcome',
+        pathMatch: 'full'
+      },
+      {
         path: 'registration',
         loadChildren: () => import('./pages/outer/main/registration/registration.module').then( m => m.RegistrationPageModule)
       },
@@ -25,6 +30,10 @@ const routes: Routes = [
       {
         path: 'welcome',
         loadChildren: () => import('./pages/outer/main/welcome/welcome.module').then( m => m.WelcomePageModule)
+      },
+      {
+        path: 'slider',
+        loadChildren: () => import('./pages/outer/main/slider/slider.module').then( m => m.SliderPageModule)
       },
       {
         path: 'location',
@@ -45,7 +54,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/main/login',
+    redirectTo: '/main/welcome',
     pathMatch: 'full'
   },
   {

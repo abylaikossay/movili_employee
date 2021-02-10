@@ -51,6 +51,17 @@
   background: transparent;
   border: 2px solid black;
 }
+.swiper-pagination-bullet-active {
+  background: var(--custom-background-color-danger);
+  width: 7vw;
+  border-radius: 9px;
+}
+ion-slides.slider-page > .swiper-pagination-bullets {
+  bottom: 29vh !important;
+}
+.swiper-pagination-bullets {
+  bottom: 0 !important;
+}
 
 
 .custom-button-movili-white {
