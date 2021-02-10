@@ -9,6 +9,9 @@ import { MoviliHeader } from '../../../models/commons/MoviliHeader';
 export class AppointmentInfoPage implements OnInit {
   moviliHeader: MoviliHeader = MoviliHeader.APPOINTMENT_INFO();
   constructor() { }
+  services: any = [1, 2, 3];
+  phoneNumber: string = "+7 7** *** ** **";
+  isEditable: boolean = false;
 
   ngOnInit() {
   }

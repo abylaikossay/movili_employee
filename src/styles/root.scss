@@ -68,3 +68,39 @@
 .toast {
   width: 90vw;
 }
+
+.header-categories {
+  white-space: nowrap;
+  overflow-x: visible;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  padding: 0 4vw 3vw;
+  margin-bottom: 8px;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-name {
+    margin-right: 4vw;
+    display: inline-block;
+    font-weight: var(--custom-font-weight-semibold);
+    font-size: var(--custom-font-size-9);
+    line-height: var(--custom-line-height); //todo fake 20px
+    letter-spacing: -0.24px;
+    color: var(--custom-text-color-movili-dark);
+  }
+
+  .category-name.selected {
+    position: relative;
+  }
+
+  .category-name.selected::after {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--custom-text-color-movili-dark);
+    width: 100%;
+    right: 0;
+    margin-top: 18px;
+  }
+}

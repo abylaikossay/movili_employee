@@ -10,6 +10,7 @@ import {ToastService} from './toast.service';
 import {IonicControllerAbstract} from '../../models/abstracts/IonicControllerAbstract';
 import {NetworkStatusComponent} from '../../components/network-status/network-status.component';
 import {LocationResponse} from '../../models/responses/LocationResponse';
+import {UserLocationResponse} from '../../models/responses/UserLocationResponse';
 
 /*
 * Use only with Option, if you want use specific ionic controller use other service
@@ -99,18 +100,65 @@ export class SettingControllerService extends AbstractSettingController {
         return this.setExtraOption(this.actionSheetService, (ionicController): IonicControllerOptionType => {
             return {
                 animated: true,
-                header: 'Пол',
+                header: 'Выберите пол:',
                 buttons: [{
                     text: 'Мужской',
                     handler: data => {
                         ionicController.dismiss('Мужской');
-                    }
+                    },
                 }, {
                     text: 'Женский',
                     handler: data => {
                         ionicController.dismiss('Женский');
+                    },
+                }],
+            };
+        });
+    }
+
+    public setAlertOrderAction(): IonicControllerAbstract {
+        return this.setExtraOption(this.actionSheetService, (ionicController): IonicControllerOptionType => {
+            return {
+                animated: true,
+                header: 'Запись',
+                buttons: [{
+                    text: 'Подробнее о записи',
+                    handler: data => {
+                        ionicController.dismiss('Подробнее о записи');
+                    },
+                },
+                    {
+                        text: 'Оменить запись',
+                        handler: data => {
+                            ionicController.dismiss('Оменить запись');
+                        },
+                    },
+                    {
+                        text: 'Пожаловаться',
+                        handler: data => {
+                            ionicController.dismiss('Пожаловаться');
+                        },
                     }
-                }]
+                ],
+            };
+        });
+    }
+
+
+    public setAlertUserLocation(locations: UserLocationResponse[]): IonicControllerAbstract {
+        return this.setExtraOption(this.actionSheetService, (ionicController): IonicControllerOptionType => {
+            const buttons = locations.map((item) => {
+                return {
+                    text: item.location,
+                    handler: data => {
+                        ionicController.dismiss(item);
+                    },
+                };
+            });
+            return {
+                animated: true,
+                header: 'Выберите ардесс:',
+                buttons: [...buttons],
             };
         });
     }
@@ -122,13 +170,13 @@ export class SettingControllerService extends AbstractSettingController {
                     text: item.ruName,
                     handler: data => {
                         ionicController.dismiss(item);
-                    }
+                    },
                 };
             });
             return {
                 animated: true,
                 header: 'Выберите город',
-                buttons: [...buttons]
+                buttons: [...buttons],
             };
         });
     }

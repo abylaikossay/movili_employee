@@ -8,6 +8,7 @@ import { AppointmentInfoPageRoutingModule } from './appointment-info-routing.mod
 
 import { AppointmentInfoPage } from './appointment-info.page';
 import { CommonHeaderModule } from '../../../components/header/common-header/common-header.module';
+import {UsedServiceModule} from '../../../components/used-service/used-service.module';
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ import { CommonHeaderModule } from '../../../components/header/common-header/com
         IonicModule,
         AppointmentInfoPageRoutingModule,
         CommonHeaderModule,
+        UsedServiceModule,
     ],
   declarations: [AppointmentInfoPage]
 })

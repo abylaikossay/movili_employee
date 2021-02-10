@@ -1,6 +1,52 @@
 <ion-content>
-  <app-common-header [header]="moviliHeader"></app-common-header>
-  
+    <app-common-header [header]="moviliHeader"></app-common-header>
+    <div class="page-padding">
+        <div class="user-info-grid">
+            <img class="user-photo" src="assets/profile.jpg" alt="">
+            <div class="user-name">Лиана</div>
+            <div class="chat-img">
+                <img src="assets/icon/chat.svg" alt="">
+            </div>
+            <div class="user-address-info">
+                <img src="assets/icon/point.svg" alt="">
+                <span class="address">Алматы, Навои 7, кв. 88</span>
+            </div>
+        </div>
+        <div class="custom-margin-top"></div>
+        <div class="services-header">Услуи</div>
+        <app-used-service class="service-li" *ngFor="let service of services"></app-used-service>
+        <div class="horizontal-line"></div>
+        <div class="custom-margin-top"></div>
+        <div class="appointment-date-info">
+            <div class="day-time">
+                <div class="calendar-day">Пт</div>
+                01.01.2021
+            </div>
+            <div class="day-time">
+                <img src="assets/icon/time-icon.svg" alt="">
+                18:00
+            </div>
+        </div>
+        <div class="custom-margin-top"></div>
+        <div class="user-contacts">
+            <div class="bold-text">Контакты</div>
+            <div class="bold-text">{{phoneNumber}}
+                <img src="assets/icon/right-arrow.svg" alt="">
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="custom-margin-top"></div>
+        <div class="bold-text">Коментарии</div>
+        <div class="divtext" [contentEditable]="isEditable">Хочу нежный, с розовым
+            оттенком...............................................
+        </div>
+        <div class="custom-margin-top"></div>
+        <div class="bottom-fixed-buttons">
+            <button class="custom-transparent-button">Откликнуться</button>
+            <button class="custom-transparent-button">Скрыть</button>
+        </div>
+    </div>
+
 
 
 </ion-content>

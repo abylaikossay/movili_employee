@@ -51,6 +51,6 @@
   </div>
   <div *ngIf="moviliHeader?.location" class="flex-header">
     <ion-icon class="location-icon" src="assets/icon/point.svg"></ion-icon>
-    <div class="location">{{moviliHeader?.location}}</div>
+    <div class="location" (click)="openAlertGender()">{{moviliHeader?.location}}</div>
   </div>
 </div>

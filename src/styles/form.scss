@@ -22,8 +22,6 @@
   z-index: 0;
   transition: var(--custom-transition);
   border-radius: var(--custom-border-radius);
-  outline-color: transparent;
-
   @include custom-button-font;
 }
 
@@ -96,6 +94,9 @@ ion-slides.slider-page > .swiper-pagination-bullets {
   @include custom-textarea;
   color: var(--custom-text-color-primary);
 
+}
+button:focus {
+  outline-color: var(--custom-background-color-danger);
 }
 
 
