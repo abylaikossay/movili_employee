@@ -110,15 +110,7 @@ export class MoviliHeader {
     static HISTORY(title: string): MoviliHeader {
         return new MoviliHeader(title,
             null,
-            'start',
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            false);
+            'start');
     }
 
     static LOGIN(): MoviliHeader {

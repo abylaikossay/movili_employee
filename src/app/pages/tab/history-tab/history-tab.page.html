@@ -1,10 +1,10 @@
-<app-common-header [header]="moviliHeader"></app-common-header>
-<div class="header-categories">
-    <div *ngFor="let category of categories" (click)="changeProducts(category)"
-         class="category-name {{category.selected ? 'selected': ''}}">
-        {{category.name}}
-    </div>
-</div>
+<!--<app-common-header [header]="moviliHeader"></app-common-header>-->
+<!--&lt;!&ndash;<div class="header-categories">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div *ngFor="let category of categories" (click)="changeProducts(category)"&ndash;&gt;-->
+<!--&lt;!&ndash;         class="category-name {{category.selected ? 'selected': ''}}">&ndash;&gt;-->
+<!--&lt;!&ndash;        {{category.name}}&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 <ion-content>
     <div class="page-padding">
         <div class="order-type" *ngFor="let order of orders">
