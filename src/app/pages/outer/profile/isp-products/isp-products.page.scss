@@ -1,0 +1,14 @@
+:host {
+  .fixed-header-inside-content {
+    width: 100%;
+    background: white;
+  }
+  .main-content {
+    margin-top: 120px;
+  }
+  .products-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4vw;
+  }
+}

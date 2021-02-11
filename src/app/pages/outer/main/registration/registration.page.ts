@@ -48,7 +48,7 @@ export class RegistrationPage implements OnInit {
   }
 
   goToLogin() {
-    this.navCtrl.navigateForward(['/login']);
+    this.navCtrl.navigateForward(['/main/login']);
   }
 
   changePhoneNumber($event: any) {

@@ -36,4 +36,8 @@ export class EditProfilePage implements OnInit {
     editPhoto() {
         console.log('edit photo');
     }
+
+    addNewPhoto() {
+
+    }
 }

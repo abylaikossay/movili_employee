@@ -13,6 +13,7 @@ export class MoviliHeader {
     rightTitle?: string;
     location?: string;
     darkMode?: boolean;
+    addNew: boolean;
 
 
     constructor(title?: string, back?: boolean,
@@ -20,7 +21,7 @@ export class MoviliHeader {
                 logo?: boolean, exit?: boolean,
                 chat?: boolean, basket?: boolean,
                 rightTitle?: string, location?: string,
-                darkMode?: boolean) {
+                darkMode?: boolean, addNew?: boolean) {
         this.title = title;
         this.back = back;
         this.filter = filter;
@@ -32,6 +33,7 @@ export class MoviliHeader {
         this.rightTitle = rightTitle;
         this.location = location;
         this.darkMode = darkMode;
+        this.addNew = addNew;
     }
 
     static HOME(cityString: string): MoviliHeader {
@@ -69,17 +71,8 @@ export class MoviliHeader {
 
 
     static SERVICE_PAGE(): MoviliHeader {
-        return new MoviliHeader('МАКИЯЖ',
-            null,
-            'end',
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null);
+        return new MoviliHeader('Выберите услугу',
+            true);
     }
 
     static LOGIN_PAGE(): MoviliHeader {
@@ -101,8 +94,20 @@ export class MoviliHeader {
         return new MoviliHeader('QR-Сканнер');
     }
 
-    static SERVICE(): MoviliHeader {
-        return new MoviliHeader('Услуги');
+    static ISP_SERVICES(): MoviliHeader {
+        return new MoviliHeader('Мои услуги',
+            true,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            true,
+        );
     }
 
     static SEARCH_SERVICE(): MoviliHeader {

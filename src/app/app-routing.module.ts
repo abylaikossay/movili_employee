@@ -77,6 +77,18 @@ const routes: Routes = [
     path: 'edit-profile',
     loadChildren: () => import('./pages/outer/profile/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   },
+  {
+    path: 'isp-products',
+    loadChildren: () => import('./pages/outer/profile/isp-products/isp-products.module').then(m => m.IspServicesPageModule)
+  },
+  {
+    path: 'user-services',
+    loadChildren: () => import('./pages/outer/profile/user-services/user-services.module').then(m => m.UserCategoriesPageModule)
+  },
+  {
+    path: 'select-category',
+    loadChildren: () => import('./pages/outer/profile/select-category/select-category.module').then(m => m.SelectServicePageModule)
+  },
 
 
 ];

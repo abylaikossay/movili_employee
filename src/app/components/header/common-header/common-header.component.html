@@ -42,6 +42,9 @@
       <ng-container *ngIf="moviliHeader?.chat">
         <ion-icon (click)="goToChat()" src="assets/icon/chat.svg"></ion-icon>
       </ng-container>
+      <ng-container *ngIf="moviliHeader?.addNew">
+        <ion-icon (click)="goToChat()" src="assets/icon/plus.svg"></ion-icon>
+      </ng-container>
       <ng-container *ngIf="moviliHeader?.rightTitle">
         <div class="right-title">
           {{moviliHeader?.rightTitle}}

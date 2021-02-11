@@ -1,0 +1,26 @@
+<div class="product-card">
+  <img class="product-image" src="" [appBackgroundImage]="{id: product?.photos | imageId, index:0}"
+       alt="Product">
+  <div class="product-info">
+    <div class="product-name">
+      {{product?.name | appEmptyPipe}}
+    </div>
+    <p>
+      {{product?.ispInfo?.description | appEmptyPipe}} {{product?.ispInfo?.name | appEmptyPipe}}
+    </p>
+    <div class="card-footer">
+      <div class="starts">
+        stars
+      </div>
+<!--      <button class="custom-button-movili add-button" (click)="addProduct()">-->
+<!--        <ion-icon name="{{(product.isSelected)? 'checkmark': 'add'}}"></ion-icon>-->
+<!--      </button>-->
+      <div class="price">
+        {{product?.price | appEmptyPipe }} тг
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

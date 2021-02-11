@@ -15,7 +15,7 @@ export class ProfileTabPage implements OnInit {
     moviliHeader: MoviliHeader = MoviliHeader.PROFILE_DETAIL();
     ispResponse: IspResponse;
     buttons: ProfilePageButtons[] = [
-        {goToUrl: '', icon: 'my-services.svg', title: 'Мои услуги'},
+        {goToUrl: 'user-services', icon: 'my-services.svg', title: 'Мои услуги'},
         {goToUrl: '', icon: 'my-timetable.svg', title: 'Мой график'},
         {goToUrl: '', icon: 'promo-code.svg', title: 'Промо-код и бонусы'},
         {goToUrl: 'popular-questions', icon: 'help.svg', title: 'Популярные вопросы'},
