@@ -13,7 +13,7 @@ export class MoviliHeader {
     rightTitle?: string;
     location?: string;
     darkMode?: boolean;
-    addNew: boolean;
+    addNew?: boolean;
 
 
     constructor(title?: string, back?: boolean,

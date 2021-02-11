@@ -17,7 +17,8 @@ export class UslugaCardComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.imageUrl = environment.imageUrl + '/usluga/' + this.serv.photo;
+        console.log(this.serv);
+        // this.imageUrl = environment.imageUrl + '/usluga/' + this.serv.photo;
     }
 
 }

@@ -4,7 +4,8 @@ import {ActivatedRoute} from '@angular/router';
 import {MoviliHeader} from '../../../../models/commons/MoviliHeader';
 import {CategoryResponse} from '../../../../models/responses/CategoryResponse';
 import {CategoryService} from '../../../../services/roots/business/category.service';
-import {unsubscribe} from '../../../../shares/util-method';
+import {environment} from '../../../../../environments/environment';
+import {ServiceResponse} from '../../../../models/responses/ServiceResponse';
 
 @Component({
   selector: 'app-select-category',
@@ -13,10 +14,14 @@ import {unsubscribe} from '../../../../shares/util-method';
 })
 export class SelectCategoryPage implements OnInit {
   $url: Subscription;
+  service: ServiceResponse;
   categories: CategoryResponse[];
+  imageUrl: string = environment.imageUrl + '/usluga/';
   moviliHeader: MoviliHeader = MoviliHeader.SERVICE_PAGE();
   constructor(private route: ActivatedRoute,
-              private categoryService: CategoryService) { }
+              private categoryService: CategoryService) {
+
+  }
 
   ngOnInit() {
     this.getCategoriesByServiceId();
@@ -26,8 +31,9 @@ export class SelectCategoryPage implements OnInit {
     this.$url = this.route.params.subscribe(data => {
       if (data.id) {
         this.categoryService.getCategoriesByUsluga(data.id).subscribe(response => {
+          this.service = response;
           this.categories = response.categoryResponses;
-          console.log(response);
+          this.imageUrl += response.photo;
           console.log(this.categories);
         }, error => {
           console.error(error);

@@ -8,6 +8,7 @@ import { SelectServicePageRoutingModule } from './select-category-routing.module
 
 import { SelectCategoryPage } from './select-category.page';
 import {CommonHeaderModule} from '../../../../components/header/common-header/common-header.module';
+import {UslugaCardModule} from '../../../../components/usluga-card/usluga-card.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import {CommonHeaderModule} from '../../../../components/header/common-header/co
     IonicModule,
     SelectServicePageRoutingModule,
     CommonHeaderModule,
+    UslugaCardModule,
   ],
   declarations: [SelectCategoryPage]
 })
