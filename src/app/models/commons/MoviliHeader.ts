@@ -1,4 +1,4 @@
-import { side } from '../../shares/static';
+import {side} from '../../shares/static';
 
 export class MoviliHeader {
 
@@ -50,7 +50,11 @@ export class MoviliHeader {
 
 
     static PROFILE_DETAIL(): MoviliHeader {
-        return new MoviliHeader('Профиль',
+        return new MoviliHeader('Профиль');
+    }
+
+    static EDIT_PROFILE(): MoviliHeader {
+        return new MoviliHeader('Изменить профиль',
             true,
             null,
             null,
@@ -58,7 +62,7 @@ export class MoviliHeader {
             null,
             null,
             null,
-            null,
+            'Готово',
             null,
             null);
     }
@@ -143,6 +147,20 @@ export class MoviliHeader {
 
     static FILTER(): MoviliHeader {
         return new MoviliHeader('Фильтры',
+            null,
+            null,
+            null,
+            null,
+            true);
+    }
+
+    static ABOUT(title: string): MoviliHeader {
+        return new MoviliHeader(title,
+            true,
+            null,
+            null,
+            null,
+            null,
             null,
             null,
             null,

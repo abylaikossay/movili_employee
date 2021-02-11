@@ -65,6 +65,18 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () => import('./pages/outer/chat/chat.module').then(m => m.ChatPageModule)
   },
+  {
+    path: 'about-app',
+    loadChildren: () => import('./pages/outer/profile/about-app/about-app.module').then( m => m.AboutAppPageModule)
+  },
+  {
+    path: 'popular-questions',
+    loadChildren: () => import('./pages/outer/profile/popular-questions/popular-questions.module').then( m => m.PopularQuestionsPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/outer/profile/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
 
 
 ];

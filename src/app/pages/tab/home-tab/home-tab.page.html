@@ -1,7 +1,6 @@
 <app-common-header [header]="moviliHeader"></app-common-header>
 <ion-content>
     <div class="page-padding">
-
         <div class="custom-margin-top"></div>
         <app-news-banner [banners]="banners"></app-news-banner>
         <div class="custom-margin-top"></div>
@@ -11,8 +10,10 @@
         </div>
         <div class="active-applications">
             <div class="card-margin-border" *ngFor="let applicaton of applications">
-                <app-applications-card (click)="goToApplication()" class="application-card"></app-applications-card>
+                <app-applications-card (click)="goToApplication()"
+                                       class="application-card"></app-applications-card>
             </div>
         </div>
     </div>
 </ion-content>
+

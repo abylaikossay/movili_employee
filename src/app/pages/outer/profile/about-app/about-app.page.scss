@@ -1,0 +1,21 @@
+:host {
+  .movili-about-img {
+    width: 100%;
+    object-fit: scale-down;
+  }
+  .rating-grid {
+    display: grid;
+    align-items: center;
+
+    & p {
+      justify-self: center;
+      color: var(--custom-text-color-black);
+    }
+    & a {
+      text-align: center;
+      font-size: var(--custom-font-size-9);
+      font-style: var(--custom-font-style-normal);
+      font-weight: var(--custom-font-weight-regular);
+    }
+  }
+}

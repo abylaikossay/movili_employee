@@ -24,7 +24,7 @@
     </div>
     <div class="block-2">
       <ng-container *ngIf="moviliHeader?.title">
-        <div class="title">
+        <div class="title" [class.dark-mode]="moviliHeader?.darkMode">
           {{moviliHeader?.title}}
         </div>
       </ng-container>

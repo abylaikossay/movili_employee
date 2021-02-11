@@ -15,6 +15,9 @@ export class CommonHeaderComponent implements OnInit {
     moviliHeader: MoviliHeader = {};
     @Input() route: string = undefined;
 
+    @Input() isWhite: boolean = false;
+
+
     @Input()
     public set header(value: MoviliHeader) {
         this.moviliHeader = value;
@@ -25,6 +28,7 @@ export class CommonHeaderComponent implements OnInit {
                 private statusBar: StatusBar,
                 private locationService: LocationService,
                 private navCtrl: NavController) {
+
     }
 
     ngOnInit() {
@@ -61,7 +65,7 @@ export class CommonHeaderComponent implements OnInit {
             }
         }).catch(error => {
             console.error(error);
-        })
+        });
 
     }
 

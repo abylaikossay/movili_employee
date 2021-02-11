@@ -27,7 +27,7 @@
 
 @mixin custom-button-disable {
   &:disabled {
-    background: var(--custom-backgrond-color-white);
+    background: transparent;
     border-color: var(--custom-backgrond-color-movili) !important;
     color: var(--custom-backgrond-color-movili) !important;
   }
@@ -49,14 +49,17 @@
   background: transparent;
   border: 2px solid black;
 }
+
 .swiper-pagination-bullet-active {
   background: var(--custom-background-color-danger);
   width: 7vw;
   border-radius: 9px;
 }
+
 ion-slides.slider-page > .swiper-pagination-bullets {
   bottom: 29vh !important;
 }
+
 .swiper-pagination-bullets {
   bottom: 0 !important;
 }
@@ -95,6 +98,21 @@ ion-slides.slider-page > .swiper-pagination-bullets {
   color: var(--custom-text-color-primary);
 
 }
+.custom-div-textarea {
+  margin-top: 3vw;
+  background: var(--custom-backgrond-color-white);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  font-weight: var(--custom-font-weight-regular);
+  font-size: var(--custom-font-size-9);
+  line-height: var(--custom-line-height);
+  /* or 129% */
+  color: var(--custom-text-color-black);
+  padding: 2.5vw;
+  width: 100%;
+  overflow: auto;
+}
+
 button:focus {
   outline-color: var(--custom-background-color-danger);
 }
@@ -193,9 +211,28 @@ input {
   display: flex;
   align-items: end;
   color: var(--custom-text-color-gray);
+
   & img {
     margin-right: 2px;
   }
+}
+
+.main-blur-background {
+  background-image: url("../assets/background.png");
+  filter: blur(90px);
+  -webkit-filter: blur(90px);
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main-blured-content {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 

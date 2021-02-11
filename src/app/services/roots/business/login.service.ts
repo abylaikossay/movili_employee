@@ -108,7 +108,8 @@ export class LoginService {
     }
 
     async logout() {
-        this.navCtrl.navigateRoot(['/main/login']);
+        this.authService.clearAllSession();
+        // this.navCtrl.navigateRoot(['/main/login']);
     }
 
 }
