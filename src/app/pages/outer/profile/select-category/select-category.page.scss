@@ -1,5 +1,37 @@
 :host {
-  .service-photo {
+  .filter-item-element {
+    display: flex;
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin: 15px 0;
+  }
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 2px solid #B1B1B1;
+    box-sizing: border-box;
+    margin-right: 5px;
+  }
 
+  .filter-item-element.checked > .checkbox {
+    background: #D8143A;
+    border: none;
+    position: relative;
+  }
+
+  .filter-item-element.checked > .checkbox:before {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 10px;
+    left: 5px;
+    top: 7px;
+    width: 14px;
+    background: url("../../../../../assets/icon/check-icon.svg");
+    //background: url("../assets/icon/check-icon.svg")  no-repeat;
+    //background: url("src/assets/icon/c")  no-repeat;
   }
 }

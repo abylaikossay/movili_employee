@@ -15,7 +15,7 @@ import {ServiceResponse} from '../../../../models/responses/ServiceResponse';
 export class SelectCategoryPage implements OnInit {
   $url: Subscription;
   service: ServiceResponse;
-  categories: CategoryResponse[];
+  categories: CategoryResponse[] = [];
   imageUrl: string = environment.imageUrl + '/usluga/';
   moviliHeader: MoviliHeader = MoviliHeader.SERVICE_PAGE();
   constructor(private route: ActivatedRoute,
@@ -29,8 +29,10 @@ export class SelectCategoryPage implements OnInit {
 
   getCategoriesByServiceId() {
     this.$url = this.route.params.subscribe(data => {
+      console.log(data);
       if (data.id) {
         this.categoryService.getCategoriesByUsluga(data.id).subscribe(response => {
+          console.log(response);
           this.service = response;
           this.categories = response.categoryResponses;
           this.imageUrl += response.photo;
@@ -40,6 +42,10 @@ export class SelectCategoryPage implements OnInit {
         });
       }
     });
+  }
+
+  checkCategory(category) {
+    category.selected = category.selected !== true;
   }
 
 }

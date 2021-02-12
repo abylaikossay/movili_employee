@@ -4,7 +4,7 @@
         <div class="product-name">
             {{serv?.name | appEmptyPipe}}
         </div>
-        <p>
+        <p *ngIf="serv?.productCount">
             Доступно более {{serv?.productCount | appEmptyPipe}}
         </p>
     </div>

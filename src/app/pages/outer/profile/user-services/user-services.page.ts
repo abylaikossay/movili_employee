@@ -35,8 +35,6 @@ export class UserServicesPage implements OnInit, OnInitResolver {
   openServiceProducts(service: any) {
     console.log(service);
     this.navCtrl.navigateForward(['/select-category/service/' + service.id]);
-
-
   }
 
   goNext() {

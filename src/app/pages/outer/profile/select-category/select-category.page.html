@@ -1,7 +1,17 @@
 <ion-content>
   <app-common-header [header]="moviliHeader"></app-common-header>
   <div class="page-padding">
-    <app-usluga-card [serv]="service"></app-usluga-card>
+    <app-usluga-card *ngIf="service" [serv]="service"></app-usluga-card>
+    <div class="categories-list">
+      <ul>
+        <li class="filter-item-element {{(category.selected) ? 'checked': ''}}" *ngFor="let category of categories"
+            (click)="checkCategory(category)">
+          <div class="checkbox">
+          </div>
+          {{category.name}}
+        </li>
+      </ul>
+    </div>
   </div>
 
 </ion-content>

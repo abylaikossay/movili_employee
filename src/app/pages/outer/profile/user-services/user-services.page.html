@@ -4,8 +4,8 @@
     <label>
       <input type="text" class="custom-search-input" placeholder="Искать...">
     </label>
-    <div *ngFor="let serv of services" class="services-list">
-      <app-usluga-card [serv]="serv" (click)="openServiceProducts(serv)"></app-usluga-card>
+    <div *ngFor="let serv of services" class="services-list" (click)="openServiceProducts(serv)">
+      <app-usluga-card [serv]="serv"></app-usluga-card>
     </div>
   </div>
 </ion-content>
