@@ -89,6 +89,10 @@ const routes: Routes = [
     path: 'select-category',
     loadChildren: () => import('./pages/outer/profile/select-category/select-category.module').then(m => m.SelectServicePageModule)
   },
+  {
+    path: 'edit-product',
+    loadChildren: () => import('./pages/outer/profile/edit-product/edit-product.module').then( m => m.EditProductPageModule)
+  },
 
 
 ];

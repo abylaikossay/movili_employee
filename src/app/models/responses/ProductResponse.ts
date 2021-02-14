@@ -1,14 +1,15 @@
 import {GenderEnum} from './GenderEnum';
 import {IspTopResponse} from './IspTopResponse';
 
-export class ProductPopularResponse {
-  id: number;
+export class ProductResponse {
+  productId: number;
+  ispProductId: number;
   name: string;
   description: string;
   categoryId: number;
   gender: GenderEnum;
   photos: string[];
-  fromPrice: number;
+  price: number;
   ispInfo: IspTopResponse;
-  fromDuration: number;
+  duration: number;
 }

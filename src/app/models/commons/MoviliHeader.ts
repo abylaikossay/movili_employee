@@ -75,6 +75,11 @@ export class MoviliHeader {
             true);
     }
 
+    static CATEGORIES_PAGE(): MoviliHeader {
+        return new MoviliHeader('Выберите категорию',
+            true);
+    }
+
     static LOGIN_PAGE(): MoviliHeader {
         return new MoviliHeader(null,
             null,
@@ -171,6 +176,18 @@ export class MoviliHeader {
             null,
             null,
             true);
+    }
+
+    static PRODUCT_DETAIL(title: string): MoviliHeader {
+        return new MoviliHeader(title,
+            true,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            'Готово');
     }
 }
 

@@ -1,16 +1,5 @@
 :host {
-  .edit-profile-avatar {
-    width: 100%;
-    object-fit: cover;
-    height: 78vw;
-    border-radius: 0 0 25px 25px;
-  }
-
-  .page-padding {
-    padding-top: 3px;
-  }
-
-  .edit-user-photo {
+  .edit-product-photo {
     position: relative;
 
     & button {
@@ -20,26 +9,23 @@
       transform: translate(-50%, -50%);
     }
   }
-
-
-
+  .edit-profile-avatar {
+    width: 100%;
+    object-fit: cover;
+    height: 78vw;
+    border-radius: 0 0 25px 25px;
+  }
   .flex-grid {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
   }
-
   .bold-label {
     font-weight: var(--custom-font-weight-semibold);
     font-size: var(--custom-font-size-7);
     line-height: var(--custom-line-height); //todo fake 18px;
     color: var(--custom-text-color-black);
   }
-
-  .bold-label.portfolio {
-    text-align: center;
-  }
-
   .profile-input {
     font-weight: var(--custom-font-weight-regular);
     font-size: var(--custom-font-size-9);
@@ -58,42 +44,20 @@
       //color: var(--custom-text-color-tertiary);
     }
   }
-
-  .portfolio-photos {
-    white-space: nowrap;
-    overflow-x: visible;
-    overflow-y: hidden;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    & .portfolio-photo {
-      width: 17vw;
-      height: 17vw;
-      object-fit: cover;
-      margin-right: 1.5vw;
-    }
-
-  }
-
-  .center-align {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .flex-with-action {
+  .flex-space-between {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .grey-description {
-    font-size: var(--custom-font-size-10);
-    line-height: var(--custom-line-height);
-    text-transform: capitalize;
+  .light-text {
+    display: flex;
+    align-items: center;
+    font-weight: var(--custom-font-weight-semibold);
+    font-size: 15px;
+    line-height: var(--custom-line-height); //todo 21px;
     color: var(--custom-text-color-gray);
-    margin-right: 3vw;
+    & img {
+      margin-left: 2vw;
+    }
   }
-
-
 }

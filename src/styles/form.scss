@@ -49,6 +49,11 @@
   background: transparent;
   border: 2px solid black;
 }
+.white-btn {
+  border: 2px solid var(--custom-backgrond-color-white);
+  color: var(--custom-backgrond-color-white);
+  padding: 20px 30px;
+}
 
 .swiper-pagination-bullet-active {
   background: var(--custom-background-color-danger);

@@ -40,4 +40,8 @@ export class EditProfilePage implements OnInit {
     addNewPhoto() {
 
     }
+
+    saveUserProfile() {
+        console.log('SAVE PROFILE');
+    }
 }

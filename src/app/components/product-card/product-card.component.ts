@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {ProductPopularResponse} from '../../models/responses/ProductPopularResponse';
+import {ProductResponse} from '../../models/responses/ProductResponse';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-product-card',
@@ -9,9 +10,9 @@ import {ProductPopularResponse} from '../../models/responses/ProductPopularRespo
 export class ProductCardComponent implements OnInit {
   // product: any = {isSelected: false};
 
-  @Input() product: ProductPopularResponse;
+  @Input() product: ProductResponse;
 
-  constructor() {
+  constructor(private navCtrl: NavController) {
   }
 
   ngOnInit() {
@@ -19,5 +20,9 @@ export class ProductCardComponent implements OnInit {
 
   addProduct() {
     // this.product.isSelected = this.product.isSelected !== true;
+  }
+
+  editProduct() {
+    this.navCtrl.navigateForward(['/edit-product/' + this.product.ispProductId]);
   }
 }

@@ -1,11 +1,10 @@
-import {ProductPopularResponse} from './ProductPopularResponse';
+import {ProductResponse} from './ProductResponse';
 
 export class CategoryResponse {
   id: number;
   name: string;
   description: string;
   photo: string;
-  productResponses: ProductPopularResponse[];
-  // rating: number;
+  productResponses: ProductResponse[];
   selected: boolean = false;
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {NavController} from '@ionic/angular';
 import {MoviliHeader} from '../../../models/commons/MoviliHeader';
@@ -23,6 +23,8 @@ export class CommonHeaderComponent implements OnInit {
         this.moviliHeader = value;
         this.setModeDark();
     }
+
+    @Output() onFinishAction: EventEmitter<any> = new EventEmitter<any>();
 
     constructor(private settingControllerService: SettingControllerService,
                 private statusBar: StatusBar,
@@ -55,7 +57,7 @@ export class CommonHeaderComponent implements OnInit {
         this.navCtrl.back({animated: true});
     }
 
-    async openAlertGender() {
+    async openAlertLocation() {
         this.locationService.getUserLocations().toPromise().then(async response => {
             const alertChooseCity = this.settingControllerService.setAlertUserLocation(response);
             const value = await alertChooseCity.present();
@@ -69,4 +71,10 @@ export class CommonHeaderComponent implements OnInit {
 
     }
 
+    addNewProduct() {
+    }
+
+    finishAction() {
+        this.onFinishAction.emit();
+    }
 }

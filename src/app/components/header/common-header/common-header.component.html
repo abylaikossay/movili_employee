@@ -43,10 +43,10 @@
         <ion-icon (click)="goToChat()" src="assets/icon/chat.svg"></ion-icon>
       </ng-container>
       <ng-container *ngIf="moviliHeader?.addNew">
-        <ion-icon (click)="goToChat()" src="assets/icon/plus.svg"></ion-icon>
+        <ion-icon (click)="addNewProduct()" src="assets/icon/plus.svg"></ion-icon>
       </ng-container>
       <ng-container *ngIf="moviliHeader?.rightTitle">
-        <div class="right-title">
+        <div class="right-title" (click)="finishAction()">
           {{moviliHeader?.rightTitle}}
         </div>
       </ng-container>
@@ -54,6 +54,6 @@
   </div>
   <div *ngIf="moviliHeader?.location" class="flex-header">
     <ion-icon class="location-icon" src="assets/icon/point.svg"></ion-icon>
-    <div class="location" (click)="openAlertGender()">{{moviliHeader?.location}}</div>
+    <div class="location" (click)="openAlertLocation()">{{moviliHeader?.location}}</div>
   </div>
 </div>

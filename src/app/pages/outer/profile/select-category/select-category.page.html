@@ -6,12 +6,20 @@
       <ul>
         <li class="filter-item-element {{(category.selected) ? 'checked': ''}}" *ngFor="let category of categories"
             (click)="checkCategory(category)">
+          <span class="category-name">
+          {{category.name}}
+          </span>
           <div class="checkbox">
           </div>
-          {{category.name}}
         </li>
       </ul>
     </div>
   </div>
-
 </ion-content>
+<ion-footer>
+  <div class="page-padding">
+    <button (click)="goNext()" class="custom-button-movili">
+      <span>Далее</span>
+    </button>
+  </div>
+</ion-footer>

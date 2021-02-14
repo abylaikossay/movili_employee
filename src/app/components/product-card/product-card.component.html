@@ -6,20 +6,28 @@
       {{product?.name | appEmptyPipe}}
     </div>
     <p>
-      {{product?.ispInfo?.description | appEmptyPipe}} {{product?.ispInfo?.name | appEmptyPipe}}
+      {{product?.description | appEmptyPipe}}
     </p>
-    <div class="card-footer">
-      <div class="starts">
-        stars
-      </div>
-<!--      <button class="custom-button-movili add-button" (click)="addProduct()">-->
-<!--        <ion-icon name="{{(product.isSelected)? 'checkmark': 'add'}}"></ion-icon>-->
-<!--      </button>-->
-      <div class="price">
-        {{product?.price | appEmptyPipe }} тг
-      </div>
-
+    <div class="product-duration">
+      <img src="assets/icon/time-icon.svg" alt="">
+      {{product?.duration}} минут
     </div>
+    <div class="product-price">
+      <span>{{product.price | appEmptyPipe}} тг </span>
+      <img src="assets/icon/edit.svg" alt="" (click)="editProduct()">
+    </div>
+<!--    <div class="card-footer">-->
+<!--      <div class="starts">-->
+<!--        stars-->
+<!--      </div>-->
+<!--&lt;!&ndash;      <button class="custom-button-movili add-button" (click)="addProduct()">&ndash;&gt;-->
+<!--&lt;!&ndash;        <ion-icon name="{{(product.isSelected)? 'checkmark': 'add'}}"></ion-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;      </button>&ndash;&gt;-->
+<!--      <div class="price">-->
+<!--        {{product?.price | appEmptyPipe }} тг-->
+<!--      </div>-->
+
+<!--    </div>-->
   </div>
 
 

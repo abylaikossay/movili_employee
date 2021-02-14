@@ -1,5 +1,5 @@
 <ion-content>
-    <app-common-header [header]="moviliHeader"></app-common-header>
+    <app-common-header (onFinishAction)="saveUserProfile()" [header]="moviliHeader"></app-common-header>
     <div class="edit-user-photo">
         <img class="edit-profile-avatar" src="assets/profile.jpg" alt="">
         <button class="custom-transparent-button white-btn" (click)="editPhoto()">Заменить</button>
