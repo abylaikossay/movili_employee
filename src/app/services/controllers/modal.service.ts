@@ -20,13 +20,7 @@ export class ModalService extends IonicControllerAbstract {
     return loading.onDidDismiss();
   }
 
-  setFilterDialogOption(data: any) {
-    this.extraOption = {
-      component: FilterComponent,
-      swipeToClose: true,
-    };
-    this.setOption(this.extraOption);
-  }
+
 
 
 }
