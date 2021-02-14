@@ -93,6 +93,10 @@ const routes: Routes = [
     path: 'edit-product',
     loadChildren: () => import('./pages/outer/profile/edit-product/edit-product.module').then( m => m.EditProductPageModule)
   },
+  {
+    path: 'author-profile',
+    loadChildren: () => import('./pages/outer/profile/author-profile/author-profile.module').then( m => m.AuthorProfilePageModule)
+  },
 
 
 ];

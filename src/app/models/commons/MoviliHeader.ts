@@ -68,6 +68,10 @@ export class MoviliHeader {
             null,
             null);
     }
+    static AUTHOR_PROFILE(): MoviliHeader {
+        return new MoviliHeader('Моя страница',
+            true);
+    }
 
 
     static SERVICE_PAGE(): MoviliHeader {

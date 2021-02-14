@@ -1,0 +1,65 @@
+:host {
+  .edit-profile-avatar {
+    width: 100%;
+    object-fit: cover;
+    height: 78vw;
+    border-radius: 0 0 25px 25px;
+  }
+  .bottom-fixed-buttons {
+    display: flex;
+    column-gap: 5vw;
+    justify-content: space-between;
+  }
+  .user-name {
+    text-align: center;
+    font-size: var(--custom-font-size-5);
+    line-height: var(--custom-line-height); //todo  18px;
+    letter-spacing: 0.1px;
+    color: var(--custom-text-color-movili-dark);
+  }
+  .user-profession {
+    text-align: center;
+    font-size: var(--custom-font-size-8);
+    line-height: var(--custom-line-height); //todo 18px;
+    color: var(--custom-text-color-gray);
+  }
+  .user-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--custom-font-size-9);
+    line-height: var(--custom-line-height); //todo 19px;
+    color: var(--custom-text-color-black);
+
+    & img {
+      margin-right: 2vw;
+      width: 4.5vw;
+    }
+  }
+  .user-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .icon-with-text {
+    display: grid;
+    font-size: var(--custom-font-size-9);
+    line-height: var(--custom-line-height); //todo 19px;
+    color: var(--custom-text-color-gray);
+
+    & img {
+      justify-self: center;
+    }
+
+    & .small-text {
+      justify-self: center;
+    }
+  }
+
+
+  .custom-transparent-button {
+    width: 100%;
+    color: var(--custom-text-color-movili);
+    border-color: var(--custom-backgrond-color-movili);
+  }
+}

@@ -3,6 +3,7 @@ import {throwIfAlreadyLoaded} from './module-import-guard';
 import {LocationResolver} from '../services/resolvers/location/location.resolver';
 import {UserLocationResolver} from '../services/resolvers/location/user-location.resolver';
 import {ServiceResolverService} from '../services/resolvers/profile/service-resolver.service';
+import {ProfileResolverService} from '../services/resolvers/profile/profile-resolver.service';
 
 const RESOLVERS = [];
 
@@ -10,6 +11,7 @@ const MOVILI_RESOLVERS = [
     LocationResolver,
     UserLocationResolver,
     ServiceResolverService,
+    ProfileResolverService
 ];
 
 @NgModule({

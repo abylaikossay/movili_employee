@@ -20,6 +20,7 @@ export class ProfileTabPage implements OnInit {
         {goToUrl: '', icon: 'promo-code.svg', title: 'Промо-код и бонусы'},
         {goToUrl: 'popular-questions', icon: 'help.svg', title: 'Популярные вопросы'},
         {goToUrl: 'about-app', icon: 'about.svg', title: 'О приложении'},
+        {goToUrl: 'author-profile', icon: 'about.svg', title: 'Моя страница'}
     ];
 
 
