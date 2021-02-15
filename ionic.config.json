@@ -1,5 +1,7 @@
 {
   "name": "movili-partner",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
