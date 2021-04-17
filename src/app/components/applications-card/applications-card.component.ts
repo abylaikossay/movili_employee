@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProductResponse} from '../../models/responses/ProductResponse';
+import {ApplicationResponse} from '../../models/responses/ApplicationResponse';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-applications-card',
@@ -7,8 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationsCardComponent implements OnInit {
 
+  @Input() application: ApplicationResponse;
+  fullUrl: string = environment.imageUrl + '/user/';
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.application);
+  }
 
 }

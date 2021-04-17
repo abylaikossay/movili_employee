@@ -97,8 +97,18 @@ const routes: Routes = [
     path: 'author-profile',
     loadChildren: () => import('./pages/outer/profile/author-profile/author-profile.module').then( m => m.AuthorProfilePageModule)
   },
-
-
+  {
+    path: 'chat-view',
+    loadChildren: () => import('./pages/outer/chat-view/chat-view.module').then( m => m.ChatViewPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/inner-tab/profile/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'history',
+    loadChildren: () => import('./pages/inner-tab/history/history/history.module').then( m => m.HistoryPageModule)
+  },
 ];
 @NgModule({
   imports: [

@@ -15,12 +15,18 @@
      -webkit-text-fill-color: transparent;
    }
   }
+  .back-btn-date {
+    display: flex;
+    align-items: center;
+
+    & svg {
+      margin-right: 3vw;
+    }
+  }
   .header-date {
     font-size: var(--custom-font-size-10);
     font-weight: var(--custom-font-weight-bold);
-    background: var(--custom-backgrond-color-movili_gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--custom-text-color-movili-dark);
   }
 
   .chat-item {

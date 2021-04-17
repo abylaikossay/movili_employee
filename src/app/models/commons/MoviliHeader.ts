@@ -68,6 +68,7 @@ export class MoviliHeader {
             null,
             null);
     }
+
     static AUTHOR_PROFILE(): MoviliHeader {
         return new MoviliHeader('Моя страница',
             true);
@@ -192,6 +193,13 @@ export class MoviliHeader {
             null,
             null,
             'Готово');
+    }
+
+    static BALANCE_PAGE() {
+        return new MoviliHeader(
+            'Мой баланс',
+            true,
+        );
     }
 }
 

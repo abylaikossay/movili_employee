@@ -14,4 +14,8 @@ export class LocationService {
       return this.locationControllerService.getUserLocations();
     }
 
+    updateUserLocation(locationId: number) {
+        return this.locationControllerService.updateUserLocation(locationId);
+    }
+
 }

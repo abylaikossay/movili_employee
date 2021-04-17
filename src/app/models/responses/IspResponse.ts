@@ -10,5 +10,6 @@ export class IspResponse {
     userProfile: UserProfileResponse;
     portfolioPhotos: string[];
     professions: IspProfessionsResponse[];
+    balance: number;
 
 }

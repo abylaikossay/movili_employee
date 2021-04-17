@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviliHeader} from '../../../models/commons/MoviliHeader';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-appointment-info',
@@ -8,8 +10,8 @@ import {MoviliHeader} from '../../../models/commons/MoviliHeader';
 })
 export class AppointmentInfoPage implements OnInit {
     moviliHeader: MoviliHeader = MoviliHeader.APPOINTMENT_INFO();
-
-    constructor() {
+    $url: Subscription;
+    constructor(private route: ActivatedRoute,) {
     }
 
     services: any = [1, 2, 3];
@@ -17,6 +19,10 @@ export class AppointmentInfoPage implements OnInit {
     isEditable: boolean = false;
 
     ngOnInit() {
+        this.$url = this.route.params.subscribe(data => {
+            console.log(data);
+        });
+        this.$url.unsubscribe();
     }
 
 }

@@ -6,7 +6,13 @@ import { HistoryTabPage } from './history-tab.page';
 const routes: Routes = [
   {
     path: '',
-    component: HistoryTabPage
+    component: HistoryTabPage,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../../inner-tab/history/history/history.module').then(m => m.HistoryPageModule),
+      },
+    ]
   }
 ];
 

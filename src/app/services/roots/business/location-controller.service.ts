@@ -18,4 +18,10 @@ export class LocationControllerService {
     return this.httpService.get('/api/location')
         .pipe(map(value => value.body as UserLocationResponse[]));
   }
+
+  updateUserLocation(locationId: number) {
+    return this.httpService.putJSON(`/api/location?locationId=${locationId}`, null)
+        .pipe(map(value => value.body as any));
+
+  }
 }
