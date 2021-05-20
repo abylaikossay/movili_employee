@@ -22,4 +22,9 @@ export class ProductControllerService {
         return this.httpService.get('/api/products/isp/' + id)
             .pipe(map(value => value.body as ProductResponse));
     }
+
+    getIspProductsByCategoryId(id: number) {
+        return this.httpService.get('/api/products/by-isp?categoryId=' + id)
+            .pipe(map(value => value.body as ProductResponse[]));
+    }
 }

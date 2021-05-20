@@ -75,4 +75,15 @@
     text-align: center;
     margin-left: 5px;
   }
+  .custom-button-movili-white-red {
+    margin-top: 4vw;
+    font-size: var(--custom-font-size-8);
+    font-weight: var(--custom-font-weight-semibold);
+    line-height: 18px;
+    background: #FFFFFF;
+    border: 1px solid var(--custom-background-color-danger);
+    box-sizing: border-box;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
 }

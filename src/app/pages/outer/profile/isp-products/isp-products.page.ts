@@ -35,6 +35,16 @@ export class IspProductsPage implements OnInit, OnInitResolver {
             console.log(this.categories);
             this.categories[0].selected = true;
             this.selectedCategoryId = this.categories[0].id;
+            this.getProductsByCategory();
+        });
+    }
+
+    async getProductsByCategory() {
+        this.productService.getIspProductsByCategoryId(this.selectedCategoryId).toPromise().then(resp => {
+            console.log(resp);
+            this.ispProducts = resp;
+        }).catch(err => {
+            console.error(err);
         });
     }
 
@@ -60,6 +70,8 @@ export class IspProductsPage implements OnInit, OnInitResolver {
     changeProducts(category: any) {
         this.categories.forEach(element => element.selected = false);
         category.selected = true;
+        this.selectedCategoryId = category.id;
+        this.getProductsByCategory();
     }
 
     getIspProducts() {

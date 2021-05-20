@@ -15,4 +15,8 @@ export class ProductService {
     getProductById(id) {
         return this.productControllerService.getProductById(id);
     }
+
+    getIspProductsByCategoryId(id: number) {
+        return this.productControllerService.getIspProductsByCategoryId(id);
+    }
 }

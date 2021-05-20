@@ -14,6 +14,7 @@ export class MoviliHeader {
     location?: string;
     darkMode?: boolean;
     addNew?: boolean;
+    emptyUser?: boolean;
 
 
     constructor(title?: string, back?: boolean,
@@ -21,7 +22,7 @@ export class MoviliHeader {
                 logo?: boolean, exit?: boolean,
                 chat?: boolean, basket?: boolean,
                 rightTitle?: string, location?: string,
-                darkMode?: boolean, addNew?: boolean) {
+                darkMode?: boolean, addNew?: boolean, emptyUser?: boolean) {
         this.title = title;
         this.back = back;
         this.filter = filter;
@@ -34,6 +35,7 @@ export class MoviliHeader {
         this.location = location;
         this.darkMode = darkMode;
         this.addNew = addNew;
+        this.emptyUser = emptyUser;
     }
 
     static HOME(cityString: string): MoviliHeader {

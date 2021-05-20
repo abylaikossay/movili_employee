@@ -26,6 +26,7 @@ export class CommonHeaderComponent implements OnInit {
     }
 
     @Output() onFinishAction: EventEmitter<any> = new EventEmitter<any>();
+    emptyProfile: boolean = true;
 
     constructor(private settingControllerService: SettingControllerService,
                 private statusBar: StatusBar,
