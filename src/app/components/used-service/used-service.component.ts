@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ApplicationResponse} from '../../models/responses/ApplicationResponse';
 
 @Component({
   selector: 'app-used-service',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./used-service.component.scss'],
 })
 export class UsedServiceComponent implements OnInit {
-  service: any = {name: 'Макияж "Smoky Eyes"', count: 2};
+  @Input() service: any;
   constructor() { }
 
   ngOnInit() {}

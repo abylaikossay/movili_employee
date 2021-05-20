@@ -6,6 +6,7 @@
                  class="category-name {{category.selected ? 'selected': ''}}">
                 {{category.name}}
             </div>
+            <div *ngIf="!categories">Пожалуйста добавьте новые категории</div>
         </div>
     </div>
     <div class="main-content">

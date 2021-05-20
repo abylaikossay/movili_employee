@@ -23,4 +23,9 @@ export class CategoryControllerService {
             .pipe(map(value => value.body));
     }
 
+    getIspCategories() {
+        return this.httpService.get('/api/categories/isp')
+            .pipe(map(value => value.body));
+    }
+
 }

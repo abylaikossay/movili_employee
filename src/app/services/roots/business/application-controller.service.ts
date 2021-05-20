@@ -23,4 +23,9 @@ export class ApplicationControllerService {
         return this.httpService.get('/api/applications')
             .pipe(map(value => value.body as ApplicationResponse[]));
     }
+
+    getApplicationById(id: number) {
+        return this.httpService.get('/api/applications/' + id)
+            .pipe(map(value => value.body as ApplicationResponse));
+    }
 }

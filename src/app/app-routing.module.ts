@@ -109,6 +109,10 @@ const routes: Routes = [
     path: 'history',
     loadChildren: () => import('./pages/inner-tab/history/history/history.module').then( m => m.HistoryPageModule)
   },
+  {
+    path: 'isp-subscriptions',
+    loadChildren: () => import('./pages/outer/profile/isp-subscriptions/isp-subscriptions.module').then( m => m.IspSubscriptionsPageModule)
+  },
 ];
 @NgModule({
   imports: [

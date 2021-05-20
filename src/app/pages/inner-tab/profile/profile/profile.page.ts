@@ -15,13 +15,13 @@ export class ProfilePage implements OnInit {
   moviliHeader: MoviliHeader = MoviliHeader.PROFILE_DETAIL();
   ispResponse: IspResponse;
   buttons: ProfilePageButtons[] = [
-    {goToUrl: 'user-services', icon: 'my-services.svg', title: 'Мои услуги'},
+    {goToUrl: 'isp-products', icon: 'my-services.svg', title: 'Мои услуги'},
     {goToUrl: '', icon: 'my-timetable.svg', title: 'Мой график'},
     {goToUrl: '', icon: 'promo-code.svg', title: 'Промо-код и бонусы'},
     {goToUrl: 'popular-questions', icon: 'help.svg', title: 'Популярные вопросы'},
     {goToUrl: 'about-app', icon: 'about.svg', title: 'О приложении'},
     {goToUrl: 'author-profile', icon: 'about.svg', title: 'Моя страница'},
-    {goToUrl: 'author-profile', icon: 'star.svg', title: 'Мои подписки'}
+    {goToUrl: 'isp-subscriptions', icon: 'star.svg', title: 'Мои подписки'}
   ];
 
 

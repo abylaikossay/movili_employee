@@ -16,5 +16,8 @@ export class ApplicationService {
     getMyApplications() {
         return this.applicationControllerService.getMyApplications();
     }
+    getApplicationById(id: number) {
+        return this.applicationControllerService.getApplicationById(id);
+    }
 
 }

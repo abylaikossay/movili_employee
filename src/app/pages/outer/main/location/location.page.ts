@@ -64,7 +64,6 @@ export class LocationPage implements OnInit, OnInitResolver {
             this.city = value?.data || null;
             this.cityName = value?.data?.ruName || '';
         }
-
         // this.form.get('cityLink').setValue((value?.data?.title || null));
     }
 }

@@ -5,6 +5,8 @@ import {IspResponse} from '../../../../models/responses/IspResponse';
 import {OnInitResolver} from '../../../../models/abstracts/OnInitResolver';
 import {map, take} from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
+import {NavController} from '@ionic/angular';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-author-profile',
@@ -14,8 +16,10 @@ import {ActivatedRoute} from '@angular/router';
 export class AuthorProfilePage implements OnInit, OnInitResolver {
   moviliHeader: MoviliHeader = MoviliHeader.AUTHOR_PROFILE();
   ispResponse: IspResponse = new IspResponse();
+  imageUrl: string = environment.imageUrl + '/isp_portfolio/';
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private navCtrl: NavController) {
     this.initResolvers();
   }
 
@@ -30,5 +34,7 @@ export class AuthorProfilePage implements OnInit, OnInitResolver {
     });
   }
 
-
+  editUser() {
+    this.navCtrl.navigateForward(['/edit-profile']);
+  }
 }

@@ -63,6 +63,13 @@ export class SelectCategoryPage implements OnInit {
             }
         });
         if (goNext) {
+            const categoryIds = [];
+            this.categories.forEach(category => {
+                if (category.selected) {
+                    categoryIds.push(category.id);
+                }
+            });
+            console.log(categoryIds);
             this.navCtrl.navigateForward(['/isp-products']);
         } else {
             this.toastService.present('Пожалуйста выберите категорю');

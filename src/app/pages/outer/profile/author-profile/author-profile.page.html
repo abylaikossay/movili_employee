@@ -2,8 +2,13 @@
     <app-common-header [header]="moviliHeader"></app-common-header>
     <img class="edit-profile-avatar" src="assets/profile.jpg" alt="">
     <div class="page-padding">
-        <div class="user-name">
-            {{ispResponse?.username}}
+        <div class="d-flex ion-align-items-center ion-justify-content-center">
+            <div class="user-name">
+                {{ispResponse?.username}}
+            </div>
+            <div class="edit">
+                <img (click)="editUser()" [appBackgroundImage]="{id:'/assets/icon/edit.svg',index:0}" src="" alt="">
+            </div>
         </div>
         <div class="user-profession">
             {{ispResponse?.professions[0]?.name}}
@@ -28,16 +33,41 @@
                 <div class="small-text">График</div>
             </div>
         </div>
+        <div class="custom-margin-top"></div>
+        <div class="card-margin-border">
+            <label>О себе</label>
+            <div class="isp-info">
+                {{ispResponse.description}}
+            </div>
+            <div class="profile-margin-top"></div>
+        </div>
+        <div class="profile-margin-top"></div>
+        <div class="card-margin-border">
+            <label>Потрфолио</label>
+            <div class="portfolio-photos">
+                <img class="portfolio-photo" src="{{imageUrl + portfolioPhoto}}"
+                     *ngFor="let portfolioPhoto of ispResponse.portfolioPhotos"
+                     alt="">
+            </div>
+            <div class="profile-margin-top"></div>
+        </div>
+        <div class="profile-margin-top"></div>
+        <label>Отзывы</label>
+        <div class="review-card">
+            <app-review-card class="profile-review"></app-review-card>
+        </div>
+
     </div>
 
+
 </ion-content>
-<ion-footer>
-    <div class="page-padding bottom-fixed-buttons">
-        <button class="custom-transparent-button">
-            <span>Откликнуться</span>
-        </button>
-        <button class="custom-transparent-button">
-            <span>Скрыть</span>
-        </button>
-    </div>
-</ion-footer>
+<!--<ion-footer>-->
+<!--    <div class="page-padding bottom-fixed-buttons">-->
+<!--        <button class="custom-transparent-button">-->
+<!--            <span>Откликнуться</span>-->
+<!--        </button>-->
+<!--        <button class="custom-transparent-button">-->
+<!--            <span>Скрыть</span>-->
+<!--        </button>-->
+<!--    </div>-->
+<!--</ion-footer>-->

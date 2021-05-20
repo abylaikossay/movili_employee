@@ -16,6 +16,7 @@
     line-height: var(--custom-line-height); //todo  18px;
     letter-spacing: 0.1px;
     color: var(--custom-text-color-movili-dark);
+    margin-right: 3vw;
   }
   .user-profession {
     text-align: center;
@@ -61,5 +62,40 @@
     width: 100%;
     color: var(--custom-text-color-movili);
     border-color: var(--custom-backgrond-color-movili);
+  }
+  .isp-info {
+    font-weight: var(--custom-font-style-normal);
+    font-size: var(--custom-font-size-10);
+    line-height: var(--custom-line-height);
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: var(--custom-text-color-black);
+  }
+
+  .portfolio-photos {
+    white-space: nowrap;
+    overflow-x: visible;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & .portfolio-photo {
+      width: 17vw;
+      height: 17vw;
+      object-fit: cover;
+      margin-right: 1.5vw;
+    }
+
+  }
+  .profile-margin-top {
+    margin-top: 3.5vw;
+  }
+  .profile-review {
+    padding: 3vw 5vw 4vw 3vw;
+    background: var(--custom-backgrond-color-white);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 3vw;
   }
 }

@@ -16,6 +16,10 @@ const routes: Routes = [
                 path: 'balance',
                 loadChildren: () => import('../../inner-tab/profile/balance/balance.module').then(m => m.BalancePageModule),
             },
+            {
+                path: '',
+                loadChildren: () => import('../../inner-tab/profile/balance/balance.module').then(m => m.BalancePageModule),
+            }
         ],
     },
     {

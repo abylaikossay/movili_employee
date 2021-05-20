@@ -16,5 +16,9 @@ export class CategoryService {
     return this.categoryControllerService.getProductsByCategory(id);
   }
 
+  getIspCategories() {
+    return this.categoryControllerService.getIspCategories();
+  }
+
 
 }

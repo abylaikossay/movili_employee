@@ -201,6 +201,13 @@ export class MoviliHeader {
             true,
         );
     }
+
+    static TITLE_WITH_BACK(title) {
+        return new MoviliHeader(
+            title,
+            true,
+        );
+    }
 }
 
 

@@ -81,6 +81,8 @@ export class CommonHeaderComponent implements OnInit {
     }
 
     addNewProduct() {
+        console.log('add new product');
+        this.navCtrl.navigateForward(['user-services']);
     }
 
     finishAction() {

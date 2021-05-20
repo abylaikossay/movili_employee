@@ -8,6 +8,9 @@ import { AuthorProfilePageRoutingModule } from './author-profile-routing.module'
 
 import { AuthorProfilePage } from './author-profile.page';
 import {CommonHeaderModule} from '../../../../components/header/common-header/common-header.module';
+import {DirectiveModule} from '../../../../modules/directive.module';
+import {ApplicationsCardModule} from '../../../../components/applications-card/applications-card.module';
+import {ReviewCardModule} from '../../../../components/review-card/review-card.module';
 
 @NgModule({
     imports: [
@@ -16,6 +19,9 @@ import {CommonHeaderModule} from '../../../../components/header/common-header/co
         IonicModule,
         AuthorProfilePageRoutingModule,
         CommonHeaderModule,
+        DirectiveModule,
+        ApplicationsCardModule,
+        ReviewCardModule,
     ],
   declarations: [AuthorProfilePage]
 })
