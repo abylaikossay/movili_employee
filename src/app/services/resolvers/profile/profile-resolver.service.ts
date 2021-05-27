@@ -12,7 +12,7 @@ export class ProfileResolverService implements Resolve<any> {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-        return this.httpService.get(`/api/isp`)
+        return this.httpService.get(`/api/isp/me`)
             .pipe(map(res => res.body));
     }
 }

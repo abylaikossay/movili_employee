@@ -20,6 +20,14 @@ export class CategoryService {
     return this.categoryControllerService.getIspCategories();
   }
 
+  addTemplateCategories(ids: string) {
+    return this.categoryControllerService.addTemplateCategories(ids);
+  }
+
+  getIspTemplateCategories() {
+    return this.categoryControllerService.getIspTemplateCategories();
+  }
+
 
 
 }

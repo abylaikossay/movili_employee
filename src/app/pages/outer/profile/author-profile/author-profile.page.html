@@ -13,6 +13,9 @@
         <div class="user-profession">
             {{ispResponse?.professions[0]?.name}}
         </div>
+        <div class="user-profession experience">
+            Опыт работы: {{ispResponse.experience}} лет
+        </div>
         <div class="custom-margin-top"></div>
         <div class="user-location">
             <img src="assets/icon/point.svg" alt="">
@@ -45,16 +48,33 @@
         <div class="card-margin-border">
             <label>Потрфолио</label>
             <div class="portfolio-photos">
-                <img class="portfolio-photo" src="{{imageUrl + portfolioPhoto}}"
-                     *ngFor="let portfolioPhoto of ispResponse.portfolioPhotos"
-                     alt="">
+                <ng-container *ngFor="let portfolioPhoto of ispResponse.portfolioPhotos">
+                    <img class="portfolio-photo" src="{{imageUrl + portfolioPhoto}}"
+                         alt="{{portfolioPhoto}}">
+                </ng-container>
+
+            </div>
+            <div class="profile-margin-top"></div>
+        </div>
+        <div class="profile-margin-top"></div>
+        <div class="card-margin-border">
+            <label>Квалификация</label>
+            <div class="flex-grid">
+                <label class="small-label" for="firstNameId">Образование</label>
+                <input id="firstNameId" class="profile-input" disabled
+                       [value]="ispResponse.username"
+                       type="text" placeholder="Введите имя">
+            </div>
+            <div>
+                <label class="small-label">Сертификаты</label>
             </div>
             <div class="profile-margin-top"></div>
         </div>
         <div class="profile-margin-top"></div>
         <label>Отзывы</label>
-        <div class="review-card">
-            <app-review-card class="profile-review"></app-review-card>
+        <div class="review-card" *ngFor="let ispRating of ispResponse.ispRatings">
+            <app-review-card [ispRating]="ispRating" class="profile-review"></app-review-card>
+            <div class="profile-margin-top"></div>
         </div>
 
     </div>

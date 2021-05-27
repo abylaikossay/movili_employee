@@ -1,55 +1,61 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MoviliHeader} from '../../../../models/commons/MoviliHeader';
+import {OrderService} from '../../../../services/roots/business/order.service';
+import {OrderResponse} from '../../../../models/responses/OrderResponse';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.page.html',
-  styleUrls: ['./history.page.scss'],
+    selector: 'app-history',
+    templateUrl: './history.page.html',
+    styleUrls: ['./history.page.scss'],
 })
 export class HistoryPage implements OnInit {
-  moviliHeader: MoviliHeader = MoviliHeader.HISTORY('История');
-  categories: any = [
-    {
-      name: 'Все записи',
-      selected: true,
-    },
-    {
-      name: 'Текущие',
-      selected: false,
-    },
-    {
-      name: 'В обработке',
-      selected: false,
-    },
-    {
-      name: 'Удачные записи',
-      selected: false,
-    },
-    {
-      name: 'Текущие',
-      selected: false,
-    },
-    {
-      name: 'В обработке',
-      selected: false,
-    },
-    {
-      name: 'Удачные записи',
-      selected: false,
-    },
-  ];
-  history: any = [1, 2];
-  orders: any = [{name: 'Текущие'}, {name: 'В обработке'}];
+    moviliHeader: MoviliHeader = MoviliHeader.HISTORY('История');
+    categories: any = [
+        {
+            id: 0,
+            name: 'В процессе',
+            selected: true,
+        },
+        {
+            id: 1,
+            name: 'Завершенные',
+            selected: false,
+        },
+        {
+            id: 2,
+            name: 'Отмененные',
+            selected: false,
+        },
+        {
+            id: 3,
+            name: 'Принятые',
+            selected: false,
+        },
+    ];
+    selectedCategory: any = {id: 0, name: 'В процессе', selected: true};
+    history: OrderResponse[] = [];
 
-  constructor() {
-  }
+    constructor(private orderService: OrderService) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.getAllOrders();
+    }
 
-  changeProducts(category: any) {
-    this.categories.forEach(element => element.selected = false);
-    category.selected = true;
-  }
+    getAllOrders() {
+        this.orderService.getOrders(this.selectedCategory.id).toPromise().then(resp => {
+            console.log(resp);
+            this.history = resp.content;
+        }).catch(err => {
+            console.error(err);
+        })
+    }
+
+    changeProducts(category: any) {
+        this.categories.forEach(element => element.selected = false);
+        category.selected = true;
+        this.selectedCategory = category;
+        this.getAllOrders();
+    }
 
 }

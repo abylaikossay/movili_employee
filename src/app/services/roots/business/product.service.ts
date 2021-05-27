@@ -16,6 +16,10 @@ export class ProductService {
         return this.productControllerService.getProductById(id);
     }
 
+    getProductsByCategoryId(id: number) {
+        return this.productControllerService.getAllProductsByCategoryId(id);
+    }
+
     getIspProductsByCategoryId(id: number) {
         return this.productControllerService.getIspProductsByCategoryId(id);
     }

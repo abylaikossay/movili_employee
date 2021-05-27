@@ -54,7 +54,7 @@ export class HomeTabPage implements OnInit, OnInitResolver {
         if (id === 1) {
             this.applicationService.getAllApplications().toPromise().then(resp => {
                 console.log(resp);
-                this.applications = resp;
+                this.applications = resp.content;
             }).catch(err => {
                 console.error(err);
             });

@@ -18,6 +18,11 @@ export class ProductControllerService {
             .pipe(map(value => value.body as ProductResponse[]));
     }
 
+    getAllProductsByCategoryId(id: number) {
+        return this.httpService.get('/api/products?categoryId=' + id)
+            .pipe(map(value => value.body as ProductResponse[]));
+    }
+
     getProductById(id: number) {
         return this.httpService.get('/api/products/isp/' + id)
             .pipe(map(value => value.body as ProductResponse));

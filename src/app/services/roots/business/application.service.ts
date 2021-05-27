@@ -20,4 +20,12 @@ export class ApplicationService {
         return this.applicationControllerService.getApplicationById(id);
     }
 
+    submitApp(id: number) {
+        return this.applicationControllerService.submitApplication(id);
+    }
+
+    hideApp(id: number) {
+        return this.applicationControllerService.hideApplication(id);
+    }
+
 }

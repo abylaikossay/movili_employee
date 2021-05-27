@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {IonSlides, NavController} from '@ionic/angular';
+import {BannerService} from '../../../../services/roots/business/banner.service';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
     selector: 'app-slider',
@@ -12,25 +14,33 @@ export class SliderPage implements OnInit {
         initialSlide: 0,
         speed: 200,
     };
-    slides: any = [{url: 1, text: 'Далее'},{url: 2, text: 'Далее'}, {url: 3, text: 'Начать!'}];
-    size: any = [10, 20, 30];
-    nextButton: string = 'Далее';
+    slides: any = [];
+    photoUrl: string = environment.imageUrl + '/welcome_page/';
 
-    constructor(private navCtrl: NavController) {
+    constructor(private navCtrl: NavController,
+                private bannerService: BannerService) {
     }
 
     ngOnInit() {
+        this.getAllSlidesForIsp();
+    }
+
+    getAllSlidesForIsp() {
+        this.bannerService.getWelcomePage().toPromise().then(resp => {
+            console.log(resp);
+            resp.forEach(element => {
+                element.text = 'Далее';
+            })
+            resp[resp.length - 1].text = 'Начать!';
+            this.slides = resp;
+        });
     }
 
     goNext(slide: any) {
         console.log(slide);
         this.slider.slideNext();
-
-        if (slide.url === 3) {
+        if (slide.text === 'Начать!') {
             this.navCtrl.navigateForward(['/main/login']);
         }
-
-        // this.
-
     }
 }

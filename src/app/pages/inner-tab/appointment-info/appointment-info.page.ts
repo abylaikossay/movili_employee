@@ -6,6 +6,7 @@ import {ApplicationService} from '../../../services/roots/business/application.s
 import {ToastService} from '../../../services/controllers/toast.service';
 import {ApplicationResponse} from '../../../models/responses/ApplicationResponse';
 import {environment} from '../../../../environments/environment';
+import {NavController} from '@ionic/angular';
 
 @Component({
     selector: 'app-appointment-info',
@@ -17,7 +18,8 @@ export class AppointmentInfoPage implements OnInit {
     $url: Subscription;
     constructor(private route: ActivatedRoute,
                 private applicationService: ApplicationService,
-                private toastService: ToastService) {
+                private toastService: ToastService,
+                private navCtrl: NavController) {
     }
     fullUrl: string = environment.imageUrl + '/user/';
     services: any = [];
@@ -45,4 +47,26 @@ export class AppointmentInfoPage implements OnInit {
         this.$url.unsubscribe();
     }
 
+    submit(application: ApplicationResponse) {
+        console.log(application);
+        this.applicationService.submitApp(application.appId).toPromise().then(resp => {
+            console.log(resp);
+            this.toastService.present(resp.message);
+        }).catch(err => {
+            this.toastService.present(err.error.message);
+            this.navCtrl.navigateRoot([`tabs/home-tab`]);
+            console.error(err);
+        })
+    }
+
+    hide(application: ApplicationResponse) {
+        this.applicationService.hideApp(application.appId).toPromise().then(resp => {
+            console.log(resp);
+            this.toastService.present(resp.message);
+        }).catch(err => {
+            this.toastService.present(err.error.message);
+            this.navCtrl.navigateRoot([`tabs/home-tab`]);
+            console.error(err);
+        })
+    }
 }

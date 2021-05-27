@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {OrderResponse} from '../../models/responses/OrderResponse';
+import {IspRatingResponse} from '../../models/responses/ispRatingResponse';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-review-card',
@@ -6,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./review-card.component.scss'],
 })
 export class ReviewCardComponent implements OnInit {
-
+  @Input() ispRating: IspRatingResponse;
+  photoUrl: string = environment.imageUrl + '/user/';
   constructor() { }
 
   ngOnInit() {}

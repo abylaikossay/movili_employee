@@ -1,10 +1,11 @@
 <div class="main-card">
-    <img src="assets/unknown-avatar.jpeg" alt="">
-    <div class="user-name">Анна Львова</div>
+    <img *ngIf="!ispRating.userProfile.photo" src="assets/unknown-avatar.jpeg" alt="">
+    <img *ngIf="ispRating.userProfile.photo" src="{{photoUrl + ispRating.userProfile.photo}}" alt="">
+    <div class="user-name">{{ispRating.userProfile.firstName + ispRating.userProfile.lastName}}</div>
     <div class="rating">
         <img class="star-img" src="assets/icon/star.svg" alt="">
-        <span>5</span>
+        <span>{{ispRating.rateNum}}</span>
     </div>
-    <div class="comment">Комментарий.....</div>
+    <div class="comment">{{ispRating.comment}}</div>
 
 </div>

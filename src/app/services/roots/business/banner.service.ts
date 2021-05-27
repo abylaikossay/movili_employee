@@ -10,7 +10,11 @@ export class BannerService {
     }
 
     getBanners() {
-      return this.bannerControllerService.getBanners();
+        return this.bannerControllerService.getBanners();
+    }
+
+    getWelcomePage() {
+        return this.bannerControllerService.getWelcomePage();
     }
 
 }

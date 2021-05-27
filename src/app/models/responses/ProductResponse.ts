@@ -5,6 +5,8 @@ export class ProductResponse {
   productId: number;
   ispProductId: number;
   name: string;
+  uslugaName: string;
+  productName: string;
   description: string;
   categoryId: number;
   gender: GenderEnum;

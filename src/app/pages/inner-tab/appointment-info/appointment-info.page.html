@@ -38,7 +38,7 @@
         <div class="custom-margin-top"></div>
         <div class="user-contacts">
             <div class="bold-text">Контакты</div>
-            <div class="bold-text">{{phoneNumber}}
+            <div class="bold-text">{{application.userPhone}}
                 <img src="assets/icon/right-arrow.svg" alt="">
             </div>
         </div>
@@ -51,10 +51,10 @@
 </ion-content>
 <ion-footer>
     <div class="page-padding bottom-fixed-buttons">
-        <button class="custom-transparent-button">
+        <button class="custom-transparent-button" (click)="submit(application)">
             <span>Откликнуться</span>
         </button>
-        <button class="custom-transparent-button">
+        <button class="custom-transparent-button" (click)="hide(application)">
             <span>Скрыть</span>
         </button>
     </div>

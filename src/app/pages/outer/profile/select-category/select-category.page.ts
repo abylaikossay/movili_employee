@@ -70,7 +70,14 @@ export class SelectCategoryPage implements OnInit {
                 }
             });
             console.log(categoryIds);
-            this.navCtrl.navigateForward(['/isp-products']);
+            const ids = categoryIds.join(',');
+            console.log(ids);
+            this.categoryService.addTemplateCategories(ids).toPromise().then(resp => {
+                console.log(resp);
+                this.navCtrl.navigateForward(['/isp-new-products']);
+            }).catch(err => {
+                console.error(err);
+            })
         } else {
             this.toastService.present('Пожалуйста выберите категорю');
         }

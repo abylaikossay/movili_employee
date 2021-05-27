@@ -56,7 +56,7 @@
     <ion-icon class="location-icon" src="assets/icon/point.svg"></ion-icon>
     <div class="location" (click)="openAlertLocation()">{{moviliHeader?.location}}</div>
   </div>
-  <div *ngIf="emptyProfile">
+  <div *ngIf="emptyProfile && moviliHeader?.emptyUser">
     <button class="custom-button-movili-white-red logout-btn">Заполните профиль для начала работы!</button>
   </div>
 </div>

@@ -3,6 +3,7 @@ export class ApplicationResponse {
   userId: number;
   userLocation: string;
   userName: string;
+  userPhone: string;
   productId: number;
   productName: string
   ispProductPrice: number;

@@ -1,5 +1,6 @@
 import {UserProfileResponse} from './UserProfileResponse';
 import {IspProfessionsResponse} from './IspProfessionsResponse';
+import {IspRatingResponse} from './ispRatingResponse';
 
 export class IspResponse {
     ispId: number;
@@ -9,6 +10,7 @@ export class IspResponse {
     location: string;
     userProfile: UserProfileResponse;
     portfolioPhotos: string[];
+    ispRatings: IspRatingResponse[];
     professions: IspProfessionsResponse[];
     balance: number;
 

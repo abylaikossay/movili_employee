@@ -28,4 +28,14 @@ export class CategoryControllerService {
             .pipe(map(value => value.body));
     }
 
+    addTemplateCategories(ids: string) {
+        return this.httpService.postJson('/api/categories/template?categoryIds=' + ids, null)
+            .pipe(map(value => value.body));
+    }
+
+    getIspTemplateCategories() {
+        return this.httpService.get('/api/categories/template')
+            .pipe(map(value => value.body));
+    }
+
 }

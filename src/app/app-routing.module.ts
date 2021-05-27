@@ -113,6 +113,10 @@ const routes: Routes = [
     path: 'isp-subscriptions',
     loadChildren: () => import('./pages/outer/profile/isp-subscriptions/isp-subscriptions.module').then( m => m.IspSubscriptionsPageModule)
   },
+  {
+    path: 'isp-new-products',
+    loadChildren: () => import('./pages/outer/profile/isp-new-products/isp-new-products.module').then( m => m.IspNewProductsPageModule)
+  },
 ];
 @NgModule({
   imports: [

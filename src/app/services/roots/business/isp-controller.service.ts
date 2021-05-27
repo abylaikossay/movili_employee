@@ -15,7 +15,7 @@ export class IspControllerService {
   }
 
   getUserInfo() {
-    return this.httpService.get('/api/isp')
+    return this.httpService.get('/api/isp/me')
         .pipe(map(value => value.body as IspResponse));
   }
 }
