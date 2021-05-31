@@ -142,6 +142,14 @@ export class MoviliHeader {
             true);
     }
 
+    static REGISTER(): MoviliHeader {
+        return new MoviliHeader('',
+            true,
+            null,
+            null,
+            true);
+    }
+
     static SMS(): MoviliHeader {
         return new MoviliHeader(null,
             true,

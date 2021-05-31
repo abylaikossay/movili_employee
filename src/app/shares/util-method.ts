@@ -1,6 +1,6 @@
 import { EMPTY, Observable, Subscription } from 'rxjs';
 import { catchError, filter, map } from 'rxjs/operators';
-import { NavigationEnd } from '@angular/router';
+import {ActivatedRoute, NavigationEnd} from '@angular/router';
 
 export function getOrDefault(value: any, def: any) {
   return !!value ? value : def;
@@ -263,4 +263,7 @@ export function base64ToFile(base64) {
 export function exitApp() {
   (window as any).cordova.plugins.exit();
   window.navigator[`app`].exitApp();
+}
+export function getRouterUrl(route: ActivatedRoute) {
+  return route.snapshot[`_routerState`].url;
 }

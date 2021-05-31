@@ -39,6 +39,7 @@ export class HistoryPage implements OnInit {
     }
 
     ngOnInit() {
+        //todo add ResolveOnListenerService
         this.getAllOrders();
     }
 

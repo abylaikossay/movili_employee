@@ -9,11 +9,10 @@ import {StorageLocalService} from '../../storages/storage-local.service';
   providedIn: 'root'
 })
 export class BannerControllerService {
-  roleName: string;
+  roleName: string = environment.roleName;
   constructor(private httpService: HttpService,
               private storageLocalService: StorageLocalService) {
     this.httpService = this.httpService.setPrefix(environment.url);
-    this.roleName = this.storageLocalService.getRole();
   }
 
   getBanners() {

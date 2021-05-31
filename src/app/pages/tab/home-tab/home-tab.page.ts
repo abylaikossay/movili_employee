@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MoviliHeader} from '../../../models/commons/MoviliHeader';
 import {OnInitResolver} from '../../../models/abstracts/OnInitResolver';
 import {ActivatedRoute} from '@angular/router';
@@ -11,17 +11,20 @@ import {BannerService} from '../../../services/roots/business/banner.service';
 import {SettingControllerService} from 'src/app/services/controllers/setting-controller.service';
 import {ApplicationService} from '../../../services/roots/business/application.service';
 import {ApplicationResponse} from '../../../models/responses/ApplicationResponse';
+import {RefreshListener} from '../../../models/commons/RefreshListener';
+import {ResolveOnListenerService} from '../../../services/roots/resolve-on-listener.service';
 
 @Component({
     selector: 'app-home-tab',
     templateUrl: './home-tab.page.html',
     styleUrls: ['./home-tab.page.scss'],
 })
-export class HomeTabPage implements OnInit, OnInitResolver {
+export class HomeTabPage implements OnInit, OnDestroy, OnInitResolver, RefreshListener {
     moviliHeader: MoviliHeader = {};
     userLocations: UserLocationResponse[];
     applications: ApplicationResponse[];
     banners: BannersResponse[];
+    applicationType: number = 1;
     categories: any = [
         {
             id: 1,
@@ -41,16 +44,36 @@ export class HomeTabPage implements OnInit, OnInitResolver {
                 private settingControllerService: SettingControllerService,
                 private navCtrl: NavController,
                 private bannerService: BannerService,
+                private resolveOnListener: ResolveOnListenerService,
                 private applicationService: ApplicationService) {
         this.initResolvers();
     }
 
     ngOnInit() {
         this.getBanners();
-        this.getAllApplications(1);
+        this.getAllApplications(this.applicationType);
     }
 
+    ngOnDestroy(): void {
+        this.resolveOnListener.delete('home');
+    }
+
+    ionViewWillEnter() {
+        this.resolveOnListener.add('home', this.call.bind(this));
+    }
+
+    ionViewWillLeave() {
+        this.resolveOnListener.delete('home');
+    }
+
+
+    call() {
+        this.getAllApplications(this.applicationType);
+    }
+
+
     getAllApplications(id: number) {
+        this.applicationType = id;
         if (id === 1) {
             this.applicationService.getAllApplications().toPromise().then(resp => {
                 console.log(resp);
@@ -92,7 +115,10 @@ export class HomeTabPage implements OnInit, OnInitResolver {
 
     goToFilter() {
         const modal = this.settingControllerService.setModalFilterComponent();
-        modal.present();
+        modal.present().then(resp => {
+            console.log(resp);
+        });
+
     }
 
     goToApplication(application: ApplicationResponse) {

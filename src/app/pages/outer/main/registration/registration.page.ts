@@ -12,7 +12,7 @@ import {UserTemplateRequest} from '../../../../models/requests/UserTemplateReque
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-  moviliHeader: MoviliHeader = MoviliHeader.LOGIN();
+  moviliHeader: MoviliHeader = MoviliHeader.REGISTER();
 
   constructor(private navCtrl: NavController,
               private storageLocalService: StorageLocalService,

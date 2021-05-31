@@ -8,6 +8,7 @@ export const environment = {
   console: true,
   language: 'ru',
   name: 'movili',
+  roleName: 'ROLE_ISP',
   // url: 'http://10.110.1.71:8884',
   // url: 'http://37.228.66.154:8884',
   // imageUrl: 'http://37.228.66.154:8884/api/file',
